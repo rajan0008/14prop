@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>List of Property Details</title>
+</head>
+<body>
+    <h1>List of Property Details</h1>
+    <ul>
+        {% for detail in property_details %}
+            <li>{{ detail.Listdetail }}</li>
+        {% empty %}
+            <li>No property details available</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

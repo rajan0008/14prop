@@ -1,0 +1,974 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>14properties</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="{% static 'img/favicon.ico' %}" rel="icon">
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Inter:wght@700;800&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+<link href="{% static 'lib/wow/animate/animate.min.css' %}" rel="stylesheet">
+<link href="{% static 'lib/wow/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+<link href="{% static 'bootstrap.min.css' %}" rel="stylesheet">
+<link href="{% static 'style.css' %}" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container-xxl bg-white p-0">
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+
+        <!-- Navbar Start -->
+        <div class="container-fluid nav-bar bg-transparent">
+            <nav class="navbar navbar-expand-lg bg-white navbar-light fixed-top py-0 px-4">
+                <a href="index.html" class="navbar-brand d-flex align-items-center text-center">
+                    <div class="icon p-2 me-2">
+                        <img class="img-fluid" src="{% static 'img/mylogo2.jpg' %}" alt="Icon" style="width: 200px; height: 200px;">
+                    </div>
+                    
+                </a>
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav ms-auto">
+                        <a href="/" class="nav-item nav-link active">Home</a>
+                        <a href="about" class="nav-item nav-link">About</a>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Property</a>
+                            <div class="dropdown-menu rounded-0 m-0">
+                                <a href="propertylist" class="dropdown-item">Property List</a>
+                                <a href="propertytype" class="dropdown-item">Property Type</a>
+                                <a href="propertyagent" class="dropdown-item">Property Agent</a>
+                            </div>
+                        </div>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                            <div class="dropdown-menu rounded-0 m-0">
+                                <a href="testimonial" class="dropdown-item">Testimonial</a>
+                                <a href="404" class="dropdown-item">404 Error</a>
+                            </div>
+                        </div>
+                        <a href="contact" class="nav-item nav-link">Contact</a>
+                    </div>
+                    <!--<a href="" class="btn btn-success px-3 d-none d-lg-flex " style="color: #FF8E2B;">Add Property</a>-->
+                    <a href="" class="btn btn-addproperty-success px-3 d-none d-lg-flex">Add Property</a>
+                </div>
+            </nav>
+        </div>
+        <!-- Navbar End -->
+
+        <div class="nav-top-morgin">
+        <!-- Header Start -->
+        <div class="container-fluid header bg-white p-0">
+            <div class="row g-0 align-items-center flex-column-reverse flex-md-row">
+                <div class="col-md-6 p-5 mt-lg-5">
+                    <h1 class="display-5 animated fadeIn mb-4">Find A <span style="color:  #FF8E2B;">Perfect Home</span> To Live With Your Family</h1>
+                    <p class="animated fadeIn mb-4 pb-2">"In search of the ideal sanctuary for our family, we seek a place where laughter echoes through the halls, and warmth envelops every corner. A home where memories are crafted, and dreams take flight on wings of possibility. We envision a haven where each member finds solace and joy, where love blooms like the flowers in the garden. With open hearts and eager minds, we embark on this journey, in pursuit of the perfect dwelling to call our own."</p>
+                   <!-- <a href="" class="btn btn-success py-3 px-5 me-3 animated fadeIn">Get Started</a>-->
+                   
+                </div>
+                <div class="col-md-6 animated fadeIn">
+                    <div class="owl-carousel header-carousel">
+                        <div class="owl-carousel-item">
+                            <img class="img-fluid" src="{% static 'img/carousel-1.jpg' %}" alt="">
+                        </div>
+                        <div class="owl-carousel-item">
+                            <img class="img-fluid" src="{% static 'img/carousel-2.jpg' %}" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Header End -->
+
+
+        <!-- Search Start -->
+        <!--<div class="container-fluid bg-dark mb-5 wow fadeIn" data-wow-delay="0.1s" style="padding: 35px;">
+            <div class="container">
+                <div class="row g-2">
+                    <div class="col-md-10">
+                        <div class="row g-2">
+                            <div class="col-md-4">
+                                <input type="text" class="form-control border-0 py-3" placeholder="Search Keyword">
+                            </div>
+                            <div class="col-md-4">
+                                <select class="form-select border-0 py-3">
+                                    <option selected>Property Type</option>
+                                    <option value="1">Property Type 1</option>
+                                    <option value="2">Property Type 2</option>
+                                    <option value="3">Property Type 3</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <select class="form-select border-0 py-3">
+                                    <option selected>Location</option>
+                                    <option value="1">Location 1</option>
+                                    <option value="2">Location 2</option>
+                                    <option value="3">Location 3</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                       <button class="btn btn-success border-0 w-100 py-3">Search</button>-->
+                      <!-- <a href="" class="button">Search</a>-->
+                   <!-- </div>
+                </div>
+            </div>
+        </div>
+        < Search End -->
+
+
+        <!-- Category Start -->
+       
+        <!-- Category End -->
+
+
+        <!-- About Start -->
+        <div class="col-lg-12-14properties"  >
+<marquee>Buying, selling, and renting properties are common transactions in the real estate market, which is influenced by factors such as location, economic conditions, demographics, and government policies</marquee>
+        </div>
+        <div class="container-xxl py-5">
+            <div class="container">
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+                        
+                        <div class="about-img position-relative overflow-hidden p-5 pe-0">
+                            <div class="coursebx-shadow ">
+                            <img class="img-fluid w-100" src="{% static 'img/about.jpg' %}">
+                            </div>
+                        </div>
+                       
+                    </div>
+                    <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+                        <h1 class="mb-4"> Place To Find The Perfect Property</h1>
+                        <p class="mb-4">"In the labyrinth of real estate, there exists a place where dreams materialize into bricks and mortar. A realm where avenues of possibility stretch far and wide, beckoning seekers of sanctuary. This place, adorned with signs of promise and opportunity, is where aspirations meet practicality. Here, amidst the myriad listings and open houses, lies the gateway to your perfect property. With each visit, each inquiry, you draw closer to the embodiment of your desires—a place to call home, where every detail aligns with your vision and aspirations.</p>
+                        <p><i class="fa fa-check  me-3" style="color: #FF8E2B;"></i>In this haven of property exploration, seasoned agents navigate the maze, guiding you with expertise and insight.</p>
+                        <p><i class="fa fa-check  me-3" style="color: #FF8E2B;"></i>Each neighborhood explored unveils new facets of possibility, enriching your quest for the ideal dwelling.</p>
+                        <p><i class="fa fa-check  me-3" style="color: #FF8E2B;"></i>Together, we embark on this journey, determined to unearth the perfect property where your family's future unfolds.</p>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- About End -->
+
+
+        <!-- Property List Start -->
+        <div class="container-xxl py-5">
+            <div class="container">
+                <div class="row g-0 gx-5 align-items-end">
+                    <div class="col-lg-6">
+                        <div class="text-start mx-auto mb-5 wow slideInLeft" data-wow-delay="0.1s">
+                            <h1 class="mb-3">Property Listing</h1>
+                            <p>Property listings provide a window into available opportunities, offering crucial information and sparking interest. They indicate when properties become available, guiding you to potential investment or living spaces. It's important to scrutinize each listing, seeking opportunities for growth. As your interest grows, so do possibilities for assistance. Such moments are pivotal in your search.</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Start looping through properties -->
+                {% for prop in a %}
+                <!-- Open a new row for every third property -->
+                {% if forloop.counter0|divisibleby:3 %}
+                <div class="row">
+                {% endif %}
+                
+                <div class="col-lg-4 overf "> <!-- Adjusted to col-lg-4 to fit three per row -->
+                    <div class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+                        <div class="carousel-inner ">
+                            {% for prop_list_detail in prop.properyListdetails.all %}
+                            <div class="carousel-item {% if forloop.first %} active {% endif %}">
+                                <img height="500px" src="{{ prop_list_detail.PropImage.url }}" class="d-block w-100" alt="Property Image">
+                            </div>
+                            {% endfor %}
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                    <div class="">
+                        <h5 class="text-Apartment-success mb-3">{{ prop.Rate }}Cr</h5>
+                        <h2>{{ prop.Name }}</h2>
+                        
+                        <div class="d-flex border-top">
+                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-ruler-combined text-Apartment-success me-2"></i>{{prop.Squarefeet}}sqft</small>
+                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-bed text-Apartment-success me-2"></i>{{prop.NoofBeds}}</small>
+                            <small class="flex-fill text-center py-2"><i class="fa fa-bath text-Apartment-success me-2"></i>{{ prop.NoofBathrooms }}</small>
+                           
+                           
+                        </div>
+                        <p><i class="fa fa-map-marker-alt text-Apartment-success me-2"></i> {{ prop.Location }}</p>
+                        <a href="/propdetails/{{prop.Location}}-{{prop.Facing}}-{{prop.Rate}}-{{prop.id}}"><button>Read more</button></a>
+                        <p>Squarefeet: {{ prop.Squarefeet }}</p>
+                        <p>No. of Beds: {{ prop.NoofBeds }}</p>
+                        <p>No. of Bathrooms: {{ prop.NoofBathrooms }}</p>
+                        <p>Facing: {{ prop.Facing }}</p>
+                        <p>Description: {{ prop.Description }}</p>
+                        {% for prop_list_detail in prop.properyListdetails.all %}
+                            <p>{{prop_list_detail.Listdetail}}</p>
+                            {% endfor %}
+                        
+                    </div>
+                    <hr>
+                    
+                    
+                </div>
+                
+                <!-- Close the row tag after every third property -->
+                {% if forloop.counter|divisibleby:3 or forloop.last %}
+                </div>
+                {% endif %}
+                {% endfor %}
+                <!-- End loop -->
+            </div>
+        </div>
+        
+                    
+                    <div class="col-lg-6 text-start text-lg-end wow slideInRight" data-wow-delay="0.1s">
+                        <ul class="nav nav-pills d-inline-flex justify-content-end mb-5">
+                            <li class="nav-item me-2">
+                                <a class="btn btn-outline-featured button " data-bs-toggle="pill" href="#tab-1">Featured</a>
+                            </li>
+                            <li class="nav-item me-2">
+                                <a class="btn btn-outline button " data-bs-toggle="pill" href="#tab-2">For Sell</a>
+                            </li>
+                            <li class="nav-item me-0">
+                                <a class="btn btn-outline button" data-bs-toggle="pill" href="#tab-3">For Rent</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="tab-content">
+                    <div id="tab-1" class="tab-pane fade show p-0 active">
+                        <div class="row g-4">
+                            
+                            <div class="col-lg-4 col-md-6 wow fadeInUp " data-wow-delay="0.1s">
+                                <div class="coursebx-shadow ">
+                                <div class="property-item rounded overflow-hidden">
+                                    <div class="position-relative overflow-hidden">
+                                                          <a href=""><img class="img-fluid" src="{% static 'img/myhome.jpeg' %}" alt=""></a>
+                                        <div class="bg-sale-success rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3 " >For Sale</div>
+                                        <div class="bg-white rounded-top text-Apartment-success position-absolute start-0 bottom-0 mx-4 pt-1 px-3">Appartment</div>
+                                    </div>
+                                    <div class="p-4 pb-0">
+                                        <h5 class="text-Apartment-success mb-3">1.2cr</h5>
+                                        <a class="d-block h5 mb-2" href="">MY HOME BHOOJA</a>
+                                        <p><i class="fa fa-map-marker-alt text-Apartment-success me-2"></i>GACHIBOWLI</p>
+                                    </div>
+                                    <div class="d-flex border-top">
+                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-ruler-combined text-Apartment-success me-2"></i>3430 SFT</small>
+                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-bed text-Apartment-success me-2"></i>3 Bed</small>
+                                        <small class="flex-fill text-center py-2"><i class="fa fa-bath text-Apartment-success me-2"></i>3 Bath</small>
+                                       
+                                       
+                                    </div>
+                                    <div style="float: right;">
+                                        
+                                        
+                                        <div class="content">
+                                            <p>MY HOME BHOOJA </p>
+                                            <p><i class="fa fa-check  me-3" style="color: #FF8E2B;"></i>Floor:Higher </p>
+                                            <p><i class="fa fa-check  me-3" style="color: #FF8E2B;"></i>Size:3430 sft </p>
+                                            <p><i class="fa fa-check  me-3" style="color: #FF8E2B;"></i>Facing:West</p>
+                                            <p><i class="fa fa-check  me-3" style="color: #FF8E2B;"></i>Central Lawn View from balcony</p>
+                                            <p><i class="fa fa-check  me-3" style="color: #FF8E2B;"></i>3 B/R with attached bathrooms,multipurpose room with bar and balcony , fully loaded kitchen with hafele appliances,balcony in hall with artificial grass carpet,drawing,living,dining,utility,powder room,interiors worth 1.2cr.</p>
+                                            <p><i class="fa fa-check  me-3" style="color: #FF8E2B;"></i>Fully Furnished(but without sofas and dining table)</p>
+                                            <p>Includes</p>
+                                            <p><i class="fa fa-check  me-3" style="color: #FF8E2B;"></i> LG Television 75"UHD(Bought in nov.2022)</p>
+                                            <p><i class="fa fa-check  me-3" style="color: #FF8E2B;"></i>.Bosch Dryer and Washing machine (bought in june 2022) </p>
+                                            <p><i class="fa fa-check  me-3" style="color: #FF8E2B;"></i> Racold geysers 25 litres(one in each bathroom) bought in march 2023</p>
+                                            <p><i class="fa fa-check  me-3" style="color: #FF8E2B;"></i> Samsung fridge 600 + litres(bought in march 2023)</p>
+                                            <p><i class="fa fa-check  me-3" style="color: #FF8E2B;"></i>LG Sound Bar (bought in Nov 2022)</p>
+                                            <P><i class="fa fa-check  me-3" style="color: #FF8E2B;"></i>100% latex mattresses for 4 beds.</P>
+                                            <p><i class="fa fa-check  me-3" style="color: #FF8E2B;"></i>Hafele Kitchen appliances dishwasher , hob , chimney,oven, microwave.</p>
+                                            <p><i class="fa fa-check  me-3" style="color: #FF8E2B;"></i>Curtains(100% dark curtains and sheer)-tatal 7 French windows</p>
+                                            <p><i class="fa fa-check  me-3" style="color: #FF8E2B;"></i>Kohler Glass cubical in all bathrooms.</p>
+                                            <p><i class="fa fa-check  me-3" style="color: #FF8E2B;"></i>Both theb balconies has invisible grill for safety</p>
+                                            <p><i class="fa fa-check  me-3" style="color: #FF8E2B;"></i>3 car parkings</p>
+                                            <p><i class="fa fa-check  me-3" style="color: #FF8E2B;"></i>Price:25k/sft</p>
+                                            <p class="full-text">...</p> <!-- Placeholder for full text -->
+                                             <!-- Read more link -->
+                                        </div>
+                                        <!--p class="read-more"><button class="Read-Moree">Read More</button></p-->
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                                <div class="coursebx-shadow ">
+                                <div class="property-item rounded overflow-hidden">
+                                    <div class="position-relative overflow-hidden">
+                                        <a href=""><img class="img-fluid" src="{%static 'img/HOME2.jpeg' %}" alt=""></a>
+                                        <div class="bg-sale-success rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">For Sale</div>
+                                        <div class="bg-white rounded-top text-Apartment-success position-absolute start-0 bottom-0 mx-4 pt-1 px-3">Appartment</div>
+                                    </div>
+                                    <div class="p-4 pb-0">
+                                        <h5 class="text-Apartment-success mb-3">2.10cr</h5>
+                                        <a class="d-block h5 mb-2" href="">Prime Appartment</a>
+                                        <p><i class="fa fa-map-marker-alt text-Apartment-success me-2"></i>Begampet</p>
+                                    </div>
+                                    <div class="d-flex border-top">
+                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-ruler-combined text-Apartment-success me-2"></i>65 sq yds</small>
+                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-bed text-Apartment-success me-2"></i>3 Bed</small>
+                                        <small class="flex-fill text-center py-2"><i class="fa fa-bath text-Apartment-success me-2"></i>2 Bath</small>
+                                    </div>
+                                    <div class="content">
+                                        
+                                       
+                                        <p><i class="fa fa-check  me-3" style="color: #FF8E2B;"></i>Appartment For Sale Prime location Begampet 1850 sft 3BHK Fully furnished apartment with power backup East facing,6yrs old,Uds 65 sq yds.</p>
+                                            <p><i class="fa fa-check  me-3" style="color: #FF8E2B;"></i>Excellent Appartment in a gated community with swimming pool gym tennis court etc available for outright purchase 2.10cr</p>
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                                <div class="coursebx-shadow ">
+                                <div class="property-item rounded overflow-hidden">
+                                    <div class="position-relative overflow-hidden">
+                                        <a href=""><img class="img-fluid" src="{%static 'img/home3.jpeg' %}" alt=""></a>
+                                        <div class="bg-sale-success rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">For Sale</div>
+                                        <div class="bg-white rounded-top text-Apartment-success position-absolute start-0 bottom-0 mx-4 pt-1 px-3">Appartment</div>
+                                    </div>
+                                    <div class="p-4 pb-0">
+                                        <h5 class="text-Apartment-success mb-3">$6.5cr</h5>
+                                        <a class="d-block h5 mb-2" href="">Malabar Hills</a>
+                                        <p><i class="fa fa-map-marker-alt text-Apartment-success me-2"></i>Bombay</p>
+                                    </div>
+                                    <div class="d-flex border-top">
+                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-ruler-combined text-Apartment-success me-2"></i>1050 Sqft</small>
+                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-bed text-Apartment-success me-2"></i>2 Bed</small>
+                                        <small class="flex-fill text-center py-2"><i class="fa fa-bath text-Apartment-success me-2"></i>2 Bath</small>
+                                    </div>
+                                    <div style="float: right;">
+                                        
+                                       
+                                        <p>Appartment for sale  Bombay malabar hills opp to girgaum chowpatty 2 bhk fully furnished / semi furnished Appartment 10th Floor south facing necklace view from all rooms,hanging garden's back view from kitchen & 1 Bedroom 1 car parking 1050 sft availabe for outright purchase 6.5 cr.</p>
+                                            <p><i class="fa fa-check  me-3" style="color: #FF8E2B;"></i> 5 mints walk to chowpaty,7 mints to Babulnath Mandir,8 mnts to jain temple, 2mnts to sodha hospital.</p>
+                                            <p><i class="fa fa-check  me-3" style="color: #FF8E2B;"></i>15-20 mnts from charni road & grant road station.</p>
+                                                <p><i class="fa fa-check  me-3" style="color: #FF8E2B;"></i>Prime location,closed to main road.15 mnts walk to Hanging Gardens.</p>
+                                        <p ><a href="">Read More</a></p>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                                <div class="coursebx-shadow ">
+                                <div class="property-item rounded overflow-hidden">
+                                    <div class="position-relative overflow-hidden">
+                                        <a href=""><img class="img-fluid" src="{% static 'img/home4.jpeg' %}" alt=""></a>
+                                        <div class="bg-sale-success rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">For Sale</div>
+                                        <div class="bg-white rounded-top text-Apartment-success position-absolute start-0 bottom-0 mx-4 pt-1 px-3">Appartment</div>
+                                    </div>
+                                    <div class="p-4 pb-0">
+                                        <h5 class="text-Apartment-success mb-3">1.80cr</h5>
+                                        <a class="d-block h5 mb-2" href="">Jodi Appartment</a>
+                                        <p><i class="fa fa-map-marker-alt text-Apartment-success me-2"></i>Begampet</p>
+                                    </div>
+                                    <div class="d-flex border-top">
+                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-ruler-combined text-Apartment-success me-2"></i>2200 Sqft</small>
+                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-bed text-Apartment-success me-2"></i>3 Bed</small>
+                                        <small class="flex-fill text-center py-2"><i class="fa fa-bath text-Apartment-success me-2"></i>2 Bath</small>
+                                    </div>
+                                    <div style="float: right;">
+                                        
+                                        
+                                        <p><i class="fa fa-check  me-3" style="color: #FF8E2B;"></i>Sale - Begampet 2200 sft 3.5 bhk East & West facing couple/jodi Appartment lower floor semi furnished - near Metro.</p>
+                                             <p><i class="fa fa-check  me-3" style="color: #FF8E2B;"></i>close to Shoppers stop,  vasan eye care,pentaloons very well maintained gated society with amenities like swimming pool,gym,huge terrace </p>
+                                                <p><i class="fa fa-check  me-3" style="color: #FF8E2B;"></i>function hall,indoor games,toddlers area,walking track,2 suv car parking 24*7 securityy 15yrs old, 1.80cr</p>
+                                        <p ><a href="">Read More</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                                <div class="coursebx-shadow ">
+                                <div class="property-item rounded overflow-hidden">
+                                    <div class="position-relative overflow-hidden">
+                                        <a href=""><img class="img-fluid" src="{% static 'img/home5.jpeg' %}" alt=""></a>
+                                        <div class="bg-sale-success rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">For Rent</div>
+                                        <div class="bg-white rounded-top text-Apartment-success position-absolute start-0 bottom-0 mx-4 pt-1 px-3">Villa</div>
+                                    </div>
+                                    <div class="p-4 pb-0">
+                                        <h5 class="text-Apartment-success mb-3">7lacs/month & 6months/Deposite</h5>
+                                        <a class="d-block h5 mb-2" href="">ROYAL VILLA ON RENT</a>
+                                        <p><i class="fa fa-map-marker-alt text-Apartment-success me-2"></i>Begampet</p>
+                                    </div>
+                                    <div class="d-flex border-top">
+                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-ruler-combined text-Apartment-success me-2"></i>15000 Sqft</small>
+                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-bed text-Apartment-success me-2"></i>5 Bedrooms,2 Living Room</small>
+                                        <small class="flex-fill text-center py-2"><i class="fa fa-bath text-Apartment-success me-2"></i>3 Bath</small>
+                                    </div>
+                                    <div style="float: right;">
+                                        
+                                        
+                                        <p><i class="fa fa-check  me-3" style="color: #FF8E2B;"></i>ROYAL VILLA ON RENT Prime location Begampet 900sq yds south plot East Entry 15000 sft</p>
+                                            <p><i class="fa fa-check  me-3" style="color: #FF8E2B;"></i> LAVISH-5 Bedroom,2 living Room,portico semi furnished/fully furnished available for lease only for Branded companies designer boutique </p>
+                                                <p><i class="fa fa-check  me-3" style="color: #FF8E2B;"></i>fine dining restaurants cafe etc 7 Lacs / month. 6*months*Deposit.</p>
+                                        <p ><a href="">Read More</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                                <div class="coursebx-shadow ">
+                                <div class="property-item rounded overflow-hidden">
+                                    <div class="position-relative overflow-hidden">
+                                        <a href=""><img class="img-fluid" src="{% static 'img/home6.jpeg' %}" alt=""></a>
+                                        <div class="bg-sale-success rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">For Sale</div>
+                                        <div class="bg-white rounded-top text-Apartment-success position-absolute start-0 bottom-0 mx-4 pt-1 px-3">Villa</div>
+                                    </div>
+                                    <div class="p-4 pb-0">
+                                        <h5 class="text-Apartment-success mb-3">5.50cr</h5>
+                                        <a class="d-block h5 mb-2" href="">ALKAPUR VILLA FOR SALE / G+3</a>
+                                        <p><i class="fa fa-map-marker-alt text-Apartment-success me-2"></i>Alkapur</p>
+                                    </div>
+                                    <div class="d-flex border-top">
+                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-ruler-combined text-Apartment-success me-2"></i>4500 Sqft</small>
+                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-bed text-Apartment-success me-2"></i>5 Bed</small>
+                                        <small class="flex-fill text-center py-2"><i class="fa fa-bath text-Apartment-success me-2"></i>9 Bath</small>
+                                    </div>
+                                    <div style="float: right;">
+                                        
+                                       
+                                        <p> <i class="fa fa-check  me-3" style="color: #FF8E2B;"></i>Alkapur Villa for sale 4500 sqft East Facing.</p>
+                                    <p><i class="fa fa-check  me-3" style="color: #FF8E2B;"></i> 5 bedrooms 9 bathrooms office room and gym room two servant quarters Price:5.50cr G+3 Floors.</p>
+                                        <p><i class="fa fa-check  me-3" style="color: #FF8E2B;"></i> New Building Fully furnished Lift and car parking</p>
+                                        <p ><a href="">Read More</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                                <div class="coursebx-shadow ">
+                                <div class="property-item rounded overflow-hidden">
+                                    <div class="position-relative overflow-hidden">
+                                        <a href=""><img class="img-fluid" src="{% static 'img/home7.jpeg' %}" alt=""></a>
+                                        <div class="bg-sale-success rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">For Sale</div>
+                                        <div class="bg-white rounded-top text-Apartment-success position-absolute start-0 bottom-0 mx-4 pt-1 px-3">Villa</div>
+                                    </div>
+                                    <div class="p-4 pb-0">
+                                        <h5 class="text-Apartment-success mb-3">6.5cr</h5>
+                                        <a class="d-block h5 mb-2" href="">Mahendra Hills</a>
+                                        <p><i class="fa fa-map-marker-alt text-Apartment-success me-2"></i>West Maredpally</p>
+                                    </div>
+                                    <div class="d-flex border-top">
+                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-ruler-combined text-Apartment-success me-2"></i>333Sq yds</small>
+                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-bed text-Apartment-success me-2"></i>3 Bed</small>
+                                        <small class="flex-fill text-center py-2"><i class="fa fa-bath text-Apartment-success me-2"></i>2 Bath</small>
+                                    </div>
+                                    <div style="float: right;">
+                                        
+                                       
+                                        <p><i class="fa fa-check  me-3" style="color: #FF8E2B;"></i>West Maredpally - Mahendra Hills 2500sft fully furnished,</p> <p><i class="fa fa-check  me-3" style="color: #FF8E2B;"></i>luxurous Villa on 333sq yds south facing plot East facing villa entry with lift.</p>
+                                        <p><i class="fa fa-check  me-3" style="color: #FF8E2B;"></i> car parking 70000+sft construction G+2+penthouse,100%vastu compliant</p>
+                                            <p><i class="fa fa-check  me-3" style="color: #FF8E2B;"></i>one year old Gr.fl-commercial office space,1st-1200 sft 2bhk flat.</p>  
+                                                <p><i class="fa fa-check  me-3" style="color: #FF8E2B;"></i>2nd fl 2500 sft 4bhk Luxurious house, 3rd floor penthouse studio,furnished,well ventilated,clear title property.</p>
+                                                    <p><i class="fa fa-check  me-3" style="color: #FF8E2B;"></i>Fully Furnished with 7AC,Geysers Generator backup,lift.</p>
+                                                        <p><i class="fa fa-check  me-3" style="color: #FF8E2B;"></i>Ample of water boring & manjeera.Price 6.5cr </p>
+                                        <p ><a href="">Read More</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s"><i class="fa fa-check  me-3" style="color: #FF8E2B;"></i>
+                                <div class="coursebx-shadow ">
+                                <div class="property-item rounded overflow-hidden">
+                                    <div class="position-relative overflow-hidden">
+                                        <a href=""><img class="img-fluid" src="{% static 'img/home8.jpeg' %}" alt=""></a>
+                                        <div class="bg-sale-success rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">For Sale</div>
+                                        <div class="bg-white rounded-top text-Apartment-success position-absolute start-0 bottom-0 mx-4 pt-1 px-3">Villa</div>
+                                    </div>
+                                    <div class="p-4 pb-0">
+                                        <h5 class="text-Apartment-success mb-3">13.5 cr / 3.5 lac / sq yds</h5>
+                                        <a class="d-block h5 mb-2" href=""> House For Sell</a>
+                                        <p><i class="fa fa-map-marker-alt text-Apartment-success me-2"></i>Rajbhavan Road</p>
+                                    </div>
+                                    <div class="d-flex border-top">
+                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-ruler-combined text-Apartment-success me-2"></i>387 Sq yds</small>
+                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-bed text-Apartment-success me-2"></i>5 Bed</small>
+                                        <small class="flex-fill text-center py-2"><i class="fa fa-bath text-Apartment-success me-2"></i>5 Bath</small>
+                                    </div>
+                                    <div style="float: right;">
+                                        
+                                        
+                                        <p><i class="fa fa-check  me-3" style="color: #FF8E2B;"></i>Rajbhavan road 387 sq yds, fully furnished villa East Facing frontage 70'*50',2 side road,100% vastu,2car park , 3 servant quarters,big verandah,5.5 bhk + media room.
+                                        </p>
+                                        <p><i class="fa fa-check  me-3" style="color: #FF8E2B;"></i>spacious balconies 8000 sft including 2000 sft furnished ready to occupy office space, very close to main road,accessible to supermarket,Hospital,Market,availabe for outright purchase with sanctioned paln for G+4 structure-Price 13.5 cr/3.5 lac / sq yds.</p>
+                                        <p ><a href="">Read More</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                                <div class="coursebx-shadow ">
+                                <div class="property-item rounded overflow-hidden">
+                                    <div class="position-relative overflow-hidden">
+                                        <a href=""><img class="img-fluid" src="{%static 'img/home9.jpeg' %}" alt=""></a>
+                                        <div class="bg-sale-success rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">For Sale</div>
+                                        <div class="bg-white rounded-top text-Apartment-success position-absolute start-0 bottom-0 mx-4 pt-1 px-3">Villa</div>
+                                    </div>
+                                    <div class="p-4 pb-0">
+                                        <h5 class="text-Apartment-success mb-3">32cr</h5>
+                                        <a class="d-block h5 mb-2" href="">Villa For Sell</a>
+                                        <p><i class="fa fa-map-marker-alt text-Apartment-success me-2"></i>Jubilee Hills</p>
+                                    </div>
+                                    <div class="d-flex border-top">
+                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-ruler-combined text-Apartment-success me-2"></i>927 Sq yds</small>
+                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-bed text-Apartment-success me-2"></i>6 Bed</small>
+                                        <small class="flex-fill text-center py-2"><i class="fa fa-bath text-Apartment-success me-2"></i>6 Bath</small>
+                                    </div>
+                                    <div style="float: right;">
+                                        
+                                        
+                                        <p><i class="fa fa-check  me-3" style="color: #FF8E2B;"></i>Jubilee hills - Road no 51,North facing 927 sq yds old house/plot for sale</p>
+                                        <p><i class="fa fa-check  me-3" style="color: #FF8E2B;"></i>House and plot both facing North(East entrance door is also availabe)</p>
+                                        <p><i class="fa fa-check  me-3" style="color: #FF8E2B;"></i>Area - 950 sq yds(on site)</p>
+                                        <p><i class="fa fa-check  me-3" style="color: #FF8E2B;"></i>old Building built-up:6000+sq.feet,6 bedrooms,servant quarters-3 rooms with 2 bathrooms,Nice lawn.</p>
+                                        <p><i class="fa fa-check  me-3" style="color: #FF8E2B;"></i>Sale Price-32cr</p>
+                                        <p ><a href="">Read More</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                                <div class="coursebx-shadow ">
+                                <div class="property-item rounded overflow-hidden">
+                                    <div class="position-relative overflow-hidden">
+                                        <a href=""><img class="img-fluid" src="{% static 'img/home10.jpeg' %}" alt=""></a>
+                                        <div class="bg-sale-success rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">For Sale</div>
+                                        <div class="bg-white rounded-top text-Apartment-success position-absolute start-0 bottom-0 mx-4 pt-1 px-3">Plot</div>
+                                    </div>
+                                    <div class="p-4 pb-0">
+                                        <h5 class="text-Apartment-success mb-3">10cr</h5>
+                                        <a class="d-block h5 mb-2" href="">Plot For Sale</a>
+                                        <p><i class="fa fa-map-marker-alt text-Apartment-success me-2"></i>Tirumalgiri</p>
+                                    </div>
+                                    <div class="d-flex border-top">
+                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-ruler-combined text-Apartment-success me-2"></i>770 Sq yds</small>
+                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-bed text-Apartment-success me-2"></i>6 Bed</small>
+                                        <small class="flex-fill text-center py-2"><i class="fa fa-bath text-Apartment-success me-2"></i>6 Bath</small>
+                                    </div>
+                                    <div style="float: right;">
+                                        
+                                       
+                                        <p><i class="fa fa-check  me-3" style="color: #FF8E2B;"></i>Tirumalgiri 770 sq yds west facing plot with North Entry Furnished villa 5000 + sft construction.</p>
+                                            <p><i class="fa fa-check  me-3" style="color: #FF8E2B;"></i>Total 5 spacious Bedrooms 1 Home theatre , 6 bathrooms.</p>
+                                                <p><i class="fa fa-check  me-3" style="color: #FF8E2B;"></i>3 huge Balconies including veranda.</p>
+                                                    <p><i class="fa fa-check  me-3" style="color: #FF8E2B;"></i>2 office rooms with attached bathrooms.</p>
+                                                        <p><i class="fa fa-check  me-3" style="color: #FF8E2B;"></i>lovely lawn with fountain.close to major Schools,Hospitals,supermarkets,Malls etc.Sale Price 10cr.</P></p>
+                                        <p ><a href="">Read More</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                                <div class="coursebx-shadow ">
+                                <div class="property-item rounded overflow-hidden">
+                                    <div class="position-relative overflow-hidden">
+                                        <a href=""><img class="img-fluid" src="{%static 'img/home11.jpeg' %}" alt=""></a>
+                                        <div class="bg-sale-success rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">For Sale</div>
+                                        <div class="bg-white rounded-top text-Apartment-success position-absolute start-0 bottom-0 mx-4 pt-1 px-3">HOUSE</div>
+                                    </div>
+                                    <div class="p-4 pb-0">
+                                        <h5 class="text-Apartment-success mb-3">1.75cr</h5>
+                                        <a class="d-block h5 mb-2" href=""> House For Sale</a>
+                                        <p><i class="fa fa-map-marker-alt text-Apartment-success me-2"></i>Old Bowenpally</p>
+                                    </div>
+                                    <div class="d-flex border-top">
+                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-ruler-combined text-Apartment-success me-2"></i>163 sq yds Sqft</small>
+                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-bed text-Apartment-success me-2"></i>4 Bed</small>
+                                        <small class="flex-fill text-center py-2"><i class="fa fa-bath text-Apartment-success me-2"></i>4 Bath</small>
+                                    </div>
+                                    <div style="float: right;">
+                                        
+                                        
+                                        <p><i class="fa fa-check  me-3" style="color: #FF8E2B;"></i>Old Bowenplally,Gauri Nagar, Near MMR Garden Posh Area , Near to state Andrews.</p>
+                                           <p><i class="fa fa-check  me-3" style="color: #FF8E2B;"></i> 163 yards,west facing, 2750 sft,11 yrs old,row house 4 BHK Triplex House Fully Furnished.</p>
+                                            <p><i class="fa fa-check  me-3" style="color: #FF8E2B;"></i> All Bed Rooms With AC Home Theatre including Sofa sets,with Tower AC ,Manjeera & Bore Water.Sale Price-1.75cr</p>
+                                        <p ><a href="">Read More</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                                <div class="coursebx-shadow ">
+                                <div class="property-item rounded overflow-hidden">
+                                    <div class="position-relative overflow-hidden">
+                                        <a href=""><img class="img-fluid" src="{% static 'img/home11.jpeg' %}" alt=""></a>
+                                        <div class="bg-sale-success rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">For Sale</div>
+                                        <div class="bg-white rounded-top text-Apartment-success position-absolute start-0 bottom-0 mx-4 pt-1 px-3">HOUSE</div>
+                                    </div>
+                                    <div class="p-4 pb-0">
+                                        <h5 class="text-Apartment-success mb-3">1.75cr</h5>
+                                        <a class="d-block h5 mb-2" href=""> House For Sale</a>
+                                        <p><i class="fa fa-map-marker-alt text-Apartment-success me-2"></i>Old Bowenpally</p>
+                                    </div>
+                                    <div class="d-flex border-top">
+                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-ruler-combined text-Apartment-success me-2"></i>163 sq yds Sqft</small>
+                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-bed text-Apartment-success me-2"></i>4 Bed</small>
+                                        <small class="flex-fill text-center py-2"><i class="fa fa-bath text-Apartment-success me-2"></i>4 Bath</small>
+                                    </div>
+                                    <div style="float: right;">
+                                        
+                                        
+                                        <p><i class="fa fa-check  me-3" style="color: #FF8E2B;"></i>Old Bowenplally,Gauri Nagar, Near MMR Garden Posh Area , Near to state Andrews.</p>
+                                           <p><i class="fa fa-check  me-3" style="color: #FF8E2B;"></i> 163 yards,west facing, 2750 sft,11 yrs old,row house 4 BHK Triplex House Fully Furnished.</p>
+                                            <p><i class="fa fa-check  me-3" style="color: #FF8E2B;"></i> All Bed Rooms With AC Home Theatre including Sofa sets,with Tower AC ,Manjeera & Bore Water.Sale Price-1.75cr</p>
+                                        <p ><a href="">Read More</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                            
+                          
+                           
+                           
+                        <!--<div class="col-12 text-center wow fadeInUp" data-wow-delay="0.1s">
+                                <a class="btn btn-Browse-primary py-3 px-5" href="">Browse More Property</a>
+                            </div> -->
+                        </div>
+                    </div>
+                    
+                  
+                           
+                    <div id="tab-3" class="tab-pane fade show p-0">
+                        <div class="row g-4">
+                           
+                          
+                          
+                           
+                          
+                        <!--<div class="col-12 text-center">
+                                <a class="btn btn-Browse-primary py-3 px-5" href="">Browse More Property</a>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Property List End -->
+
+
+        <!-- Call to Action Start -->
+        <div class="container-xxl py-5">
+            <div class="container">
+                <div class="coursebx-shadow ">
+                <div class="bg-agent-light rounded p-3">
+                    <div class="bg-white rounded p-4" style="border: 1px dashed rgba(0, 185, 142, .3)">
+                        <div class="row g-5 align-items-center">
+                            <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+                                <img class="img-fluid rounded w-100" src="{% static 'img/call-to-action.jpg' %}" alt="">
+                            </div>
+                            <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+                                <div class="mb-4">
+                                    <h1 class="mb-3">Contact With Our Certified Agent</h1>
+                                    <p>"Get in touch with our certified agent to navigate your real estate journey with confidence. Our experienced agent is equipped with the knowledge and expertise to guide you through every step of the process. Whether you're buying, selling, or investing, our agent is dedicated to understanding your needs and helping you achieve your goals. Reach out today to begin your successful real estate venture with our trusted professional by your side."</p>
+                                </div>
+                                <a href="" class="btn btn-read-success py-3 px-4 me-2"><i class="fa fa-phone-alt me-2"></i>Make A Call</a>
+                                <a href="" class="btn btn-dark py-3 px-4"><i class="fa fa-calendar-alt me-2"></i>Get Appoinment</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        <!-- Call to Action End -->
+
+
+        <!-- Team Start -->
+        <div class="container-xxl py-5">
+            <div class="container">
+                <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                    <h1 class="mb-3">Property Agents</h1>
+                    <p>"Catch up with our property agents. Primarily trusted, proficient, our agents analyze each of your requirements competently and assist you in achieving your objectives. You can acquire remarkable property ventures from our reliable agents."</p>
+                </div>
+                <div class="row g-4">
+                    
+                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="coursebx-shadow ">
+                        <div class="team-item rounded overflow-hidden">
+                            <div class="position-relative">
+                                <img class="img-fluid" src="{% static 'img/team-1.jpg' %}" alt="">
+                                <div class="position-absolute start-50 top-100 translate-middle d-flex align-items-center">
+                                    <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
+                                </div>
+                            </div>
+                            <div class="text-center p-4 mt-3">
+                                <h5 class="fw-bold mb-0">Full Name</h5>
+                                <small>Designation</small>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="coursebx-shadow ">
+                        <div class="team-item rounded overflow-hidden">
+                            <div class="position-relative">
+                                <img class="img-fluid" src="{% static 'img/team-2.jpg' %}" alt="">
+                                <div class="position-absolute start-50 top-100 translate-middle d-flex align-items-center">
+                                    <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
+                                </div>
+                            </div>
+                            <div class="text-center p-4 mt-3">
+                                <h5 class="fw-bold mb-0">Full Name</h5>
+                                <small>Designation</small>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="coursebx-shadow ">
+                        <div class="team-item rounded overflow-hidden">
+                            <div class="position-relative">
+                                <img class="img-fluid" src="{% static 'img/team-3.jpg' %}" alt="">
+                                <div class="position-absolute start-50 top-100 translate-middle d-flex align-items-center">
+                                    <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
+                                </div>
+                            </div>
+                            <div class="text-center p-4 mt-3">
+                                <h5 class="fw-bold mb-0">Full Name</h5>
+                                <small>Designation</small>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+                        <div class="coursebx-shadow ">
+                        <div class="team-item rounded overflow-hidden">
+                            <div class="position-relative">
+                                <img class="img-fluid" src="{% static 'img/team-4.jpg' %}" alt="">
+                                <div class="position-absolute start-50 top-100 translate-middle d-flex align-items-center">
+                                    <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
+                                </div>
+                            </div>
+                            <div class="text-center p-4 mt-3">
+                                <h5 class="fw-bold mb-0">Full Name</h5>
+                                <small>Designation</small>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Team End -->
+
+
+        <!-- Testimonial Start -->
+        <div class="container-xxl py-5">
+            <div class="container">
+                <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                    
+                    <h1 class="mb-3">Our Clients Say!</h1>
+                    <p>"Our clients' testimonials speak volumes about their satisfaction with our services. From their experiences, you'll find firsthand insights into the quality and dedication we bring to every interaction. Discover what sets us apart through the words of those we've had the pleasure of serving."</p>
+                </div>
+                <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
+                    
+                    <div class="testimonial-item bg-sale-success rounded p-3">
+                        <div class="coursebx-shadow ">
+                        <div class="bg-white border rounded p-4">
+                            <p>"Absolutely thrilled with the service provided by our agent! They listened attentively to our needs and found us the perfect home. Highly recommend!"</p>
+                            <div class="d-flex align-items-center">
+                                <img class="img-fluid flex-shrink-0 rounded" src="{% static 'img/testimonial-1.jpg' %}" style="width: 45px; height: 45px;">
+                                <div class="ps-3">
+                                    <h6 class="fw-bold mb-1">Client Name</h6>
+                                    <small>Profession</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              
+                    <div class="testimonial-item bg-sale-success rounded p-3">
+                        <div class="coursebx-shadow ">
+                        <div class="bg-white border rounded p-4">
+                            <p>"Our agent was a pleasure to work with. Their professionalism and expertise made the entire process smooth and stress-free. 10/10!"</p>
+                            <div class="d-flex align-items-center">
+                                <img class="img-fluid flex-shrink-0 rounded" src="{% static 'img/testimonial-2.jpg' %}" style="width: 45px; height: 45px;">
+                                <div class="ps-3">
+                                    <h6 class="fw-bold mb-1">Client Name</h6>
+                                    <small>Profession</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              
+                    <div class="testimonial-item bg-sale-success rounded p-3">
+                        <div class="coursebx-shadow ">
+                        <div class="bg-white border rounded p-4">
+                            <p>"From the moment we contacted our agent, we knew we were in good hands. Their dedication and attention to detail exceeded our expectations. Thank you!"</p>
+                            <div class="d-flex align-items-center">
+                                <img class="img-fluid flex-shrink-0 rounded" src="{%static 'img/testimonial-3.jpg' %}" style="width: 45px; height: 45px;">
+                                <div class="ps-3">
+                                    <h6 class="fw-bold mb-1">Rajan</h6>
+                                    <small>Profession</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+        <!-- Testimonial End -->
+        
+
+        <!-- Footer Start -->
+        <div class="container-fluid bg-dark text-white-50 footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+            <div class="container py-5">
+                <div class="row g-5">
+                    <div class="col-lg-3 col-md-6">
+                        <h5 class="text-white mb-4">Get In Touch</h5>
+                        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</p>
+                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
+                        <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@example.com</p>
+                        <div class="d-flex pt-2">
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <h5 class="text-white mb-4">Quick Links</h5>
+                        <a class="btn btn-link text-white-50" href="">About Us</a>
+                        <a class="btn btn-link text-white-50" href="">Contact Us</a>
+                        <a class="btn btn-link text-white-50" href="">Our Services</a>
+                        <a class="btn btn-link text-white-50" href="">Privacy Policy</a>
+                        <a class="btn btn-link text-white-50" href="">Terms & Condition</a>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <h5 class="text-white mb-4">Photo Gallery</h5>
+                        <div class="row g-2 pt-2">
+                            <div class="col-4">
+                                <img class="img-fluid rounded bg-light p-1" src="{% static 'img/property-1.jpg' %}" alt="">
+                            </div>
+                            <div class="col-4">
+                                <img class="img-fluid rounded bg-light p-1" src="{% static 'img/property-2.jpg' %}" alt="">
+                            </div>
+                            <div class="col-4">
+                                <img class="img-fluid rounded bg-light p-1" src="{% static 'img/property-3.jpg' %}" alt="">
+                            </div>
+                            <div class="col-4">
+                                <img class="img-fluid rounded bg-light p-1" src="{% static 'img/property-4.jpg' %}" alt="">
+                            </div>
+                            <div class="col-4">
+                                <img class="img-fluid rounded bg-light p-1" src="{% static 'img/property-5.jpg' %}" alt="">
+                            </div>
+                            <div class="col-4">
+                                <img class="img-fluid rounded bg-light p-1" src="{% static 'img/property-6.jpg' %}" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <h5 class="text-white mb-4">Newsletter</h5>
+                        <p>
+                            A newsletter is a regularly distributed publication, often via email, containing updates, news, or resources on a specific topic or from a particular organization, designed to inform and engage its subscribers.</p>
+                        <!--<div class="position-relative mx-auto" style="max-width: 400px;">
+                            <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
+                            <button type="button" class="btn btn-success py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+                        </div>-->
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="copyright">
+                    <div class="row">
+                        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0 " >
+                            &copy; <a class="border-bottom" href="#">14 properties</a>, All Right Reserved. 
+							
+							<!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. 
+							Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a>***/-->
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-success btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var readMoreBtn = document.querySelector('.read-more');
+            var fullText = document.querySelector('.full-text');
+            var content = document.querySelector('.content');
+            var isExpanded = false; // Variable to track the state
+            
+            // Event listener for "Read More" button click
+            readMoreBtn.addEventListener('click', function() {
+                if (!isExpanded) { // If the full text is not expanded
+                    fullText.style.display = 'block'; // Show the full text
+                    content.style.height = 'auto'; // Set height to auto to show full text
+                    readMoreBtn.textContent = 'Read Less'; // Change button text
+                    readMoreBtn.style.color = "#0E2E50";
+                    readMoreBtn.style.cursor = "pointer";
+                } else { // If the full text is expanded
+                    fullText.style.display = 'none'; // Hide the full text
+                    content.style.height = '200px'; // Set initial height
+                    readMoreBtn.textContent = 'Read More'; // Change button text
+                    readMoreBtn.style.color = "#0E2E50";
+                    readMoreBtn.style.cursor = "pointer";
+                }
+                isExpanded = !isExpanded; // Toggle the state
+            });
+        });
+    </script>
+    
+
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'lib/wow/wow.min.js' %}"></script>
+<script src="{% static 'lib/wow/easing/easing.min.js' %}"></script>
+<script src="{% static 'lib/wow/waypoints/waypoints.min.js' %}"></script>
+<script src="{% static 'lib/wow/owlcarousel/owl.carousel.min.js' %}"></script>
+
+<!-- Template Javascript -->
+<script src="{% static 'js/main.js' %}"></script>
+
+</body>
+
+</html>
