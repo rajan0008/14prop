@@ -16,8 +16,9 @@ def contact(request):
                              
     return render(request, "contact.html")
 def propertylist(request):
+    a = property.objects.all()
                              
-    return render(request, "propertylist.html")
+    return render(request, "propertylist.html",{"a": a})
 def propertyagent(request):
                              
     return render(request, "propertyagent.html")
@@ -28,6 +29,7 @@ def testimonial(request):
                              
     return render(request, "testimonial.html")
 def viewprops(request):
+    
     
     return render(request, "propertylist.html")
 def viewpropdetails(request, id, Location, Facing, Rate):

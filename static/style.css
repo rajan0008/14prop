@@ -81,6 +81,9 @@
     padding: 0;
     z-index: 9999;
 }
+body {
+    background-color: #fff !important;
+}
 
 .navbar {
     box-shadow: 0 0 30px rgba(0, 0, 0, .08);
@@ -164,7 +167,7 @@
 /*** Header ***/
 @media (min-width: 992px) {
     .header {
-        margin-top: -120px;
+        margin-top: 60px;
     }
 }
 
@@ -487,7 +490,7 @@
     font-size: 16px;
   }
   .fixed-top {
-    top: 25px !important;
+    top: 0px !important;
   }
 .btn-Browse-primary 
   {
@@ -514,7 +517,7 @@
 .col-lg-12-14properties
 {
    
-    color: #FF8E2B;
+    color: #ffffff;
 }
 .bg-light-street
 {
@@ -545,6 +548,19 @@
     margin: 0;
     padding: 0;
 }
+.whatsapp-icon {
+    position: fixed;
+    bottom: 12%;
+    right: 2%;
+    z-index: 9;
+}
+.whatsapp-icon a i {
+    font-size: 25px;
+    color: #fff;
+    background-color: #25D366;
+    padding: 7px 10px;
+    border-radius: 5px;
+}
 
 .property-list li {
     margin-bottom: 10px;
@@ -555,6 +571,16 @@
     margin: 0;
     font-size: 16px;
     color: #333;
+}
+.col-lg-12-14properties
+{
+    background-color:#0E2E50;
+       
+    height: 50px;
+}
+.buying 
+{
+    margin-top: 15px;
 }
 
 /* .fs{
